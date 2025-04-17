@@ -7,8 +7,8 @@ const int RMotor2 = 11;
 
 double lms = 255;  // left motor's speed (0-255)
 double rms = 255;  // right motor's speed (0-255)
-double udt = 2360; // time taken to travel unit distance in the maze = 18.5cm (for now)
-double t90 = 900;  // turning time for 90 degrees
+double udt = 2470; // time taken to travel unit distance in the maze = 18.5cm (for now)
+double t90 = 945;  // turning time for 90 degrees
 
 void turnRight(int duration) {
   digitalWrite(LMotor1, HIGH);
@@ -86,28 +86,7 @@ void setup() {
 }
 
 void loop() {
-  int longSide  = 6000; // ~47.0cm
-  int shortSide = 3000; // ~23.5cm
-
-  moveForward(longSide);
   delay(200);
-  turnRight(t90);
-  delay(200);
-
-  moveForward(shortSide);
-  delay(200);
-  turnRight(t90);
-  delay(200);
-
-  moveForward(longSide);
-  delay(200);
-  turnRight(t90);
-  delay(200);
-
-  moveForward(shortSide);
-  delay(200);
-  turnRight(t90);
-  delay(200);
-
-  delay(9999999999);
+  solveKnownMaze();
+  delay(99999);
 }
