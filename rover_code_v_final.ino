@@ -190,8 +190,6 @@ void executePath(const char* path) {
       case 'F':
       case 'f':
         moveForward(udt);
-        if (i >= 9) {
-          }
         break;
       case 'R':
       case 'r':
